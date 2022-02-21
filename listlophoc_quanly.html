@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Ames - Trung tâm Anh ngữ số 1 Đà Nẵng</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Ames - Trung tâm Anh ngữ số 1 Đà Nẵng">
+        
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+    
+    <!-- App CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+	
+	
+<style>
+
+
+#listlophoc td, #listlophoc th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#listlophoc tr:nth-child(even){background-color: #f2f2f2;}
+
+#listlophoc tr:hover {background-color: #ddd;}
+
+#listlophoc th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+</head> 
+
+<body class="app" onload="get_all_class()">   	
+    <header class="app-header fixed-top">	   	            
+        <div class="app-header-inner">  
+	        <div class="container-fluid py-2">
+		        <div class="app-header-content"> 
+		            <div class="row justify-content-between align-items-center">
+			        
+				    <div class="col-auto">
+					    <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+						    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg>
+					    </a>
+				    </div><!--//col-->
+		            <div class="search-mobile-trigger d-sm-none col">
+			            <i class="search-mobile-trigger-icon fas fa-search"></i>
+			        </div><!--//col-->
+		            <div class="app-search-box col">
+
+		            </div><!--//app-search-box-->
+		            
+		            <div class="app-utilities col-auto">
+			            <div class="app-utility-item app-notifications-dropdown dropdown">    
+
+			
+		
+			            <div class="app-utility-item app-user-dropdown dropdown">
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Admin</a>
+				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+
+								<li><a class="dropdown-item" href="login.html">Đăng xuất</a></li>
+							</ul>
+			            </div><!--//app-user-dropdown--> 
+		            </div><!--//app-utilities-->
+		        </div><!--//row-->
+	            </div><!--//app-header-content-->
+	        </div><!--//container-fluid-->
+        </div><!--//app-header-inner-->
+        <div id="app-sidepanel" class="app-sidepanel"> 
+	        <div id="sidepanel-drop" class="sidepanel-drop"></div>
+	        <div class="sidepanel-inner d-flex flex-column">
+		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+		        <div class="app-branding">
+		            <a class="app-logo" href="index_quanly.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">AMES</span></a>
+	
+		        </div><!--//app-branding-->  
+		        
+			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+					
+					
+					
+					   <li class="nav-item">
+					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					        <a class="nav-link " href="index_quanly.html">
+						        <span class="nav-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+									</svg>
+						         </span>
+		                         <span class="nav-link-text">Thông tin tài khoản</span>
+					        </a><!--//nav-link-->
+					    </li><!--//nav-item-->
+						
+						
+					    <li class="nav-item">
+					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					        <a class="nav-link active " href="#">
+						        <span class="nav-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
+  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+</svg>
+						         </span>
+		                         <span class="nav-link-text">Quản lý lớp học</span>
+					        </a><!--//nav-link-->
+					    </li><!--//nav-item-->
+					 
+					  
+  
+							    
+				    </ul><!--//app-menu-->
+			    </nav><!--//app-nav-->
+
+		       
+	        </div><!--//sidepanel-inner-->
+	    </div><!--//app-sidepanel-->
+    </header><!--//app-header-->
+    
+   <div class="app-wrapper">
+   
+ 	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">  
+   
+			    <div class="row g-3 mb-4 align-items-center justify-content-between">
+				    <div class="col-auto">
+			            <h1 class="app-page-title mb-0">Quản lý lớp học</h1>
+				    </div>
+					
+					<div class="col-auto">
+			            <a onclick="get_all_gv()" class="btn btn-sm bg-primary text-white " data-bs-toggle="modal" data-bs-target="#myModal"><i class="fas fa-plus-circle"></i>Thêm lớp học</a>
+						
+				    </div>
+					
+					 					
+					
+				    <div class="col-auto">
+					     <div class="page-utilities">
+						    <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+							    <div class="col-auto">
+
+					                
+							    </div><!--//col-->
+
+
+						    </div><!--//row-->
+					    </div><!--//table-utilities-->
+				    </div><!--//col-auto-->
+			    </div><!--//row-->   
+   
+   
+	    
+					    <div class="app-card app-card-orders-table shadow-sm mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+							        <table class="table app-table-hover mb-0 text-left" id="listlophoc">
+										<thead>
+											<tr>
+												<th class="cell text-center">Mã lớp</th>
+												<th class="cell text-center">Tên lớp</th>
+												<th class="cell text-center">Giảng viên</th>
+												<th class="cell text-center">Thời gian</th>
+												<th class="cell text-center">Phòng</th>
+												<th class="cell text-center">Số lượng</th>
+												<th class="cell text-center">Chi tiết</th>
+											</tr>
+										</thead>
+										<tbody id="data1">
+
+
+		
+										</tbody>
+									</table>
+						        </div><!--//table-responsive-->
+						       
+						    </div><!--//app-card-body-->		
+						</div><!--//app-card-->
+              
+             
+               
+              
+	    </div>
+		</div>
+		
+		
+											<!-- The Modal -->
+									<div class="modal" id="myModal">
+									  <div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+
+										  <!-- Modal Header -->
+										  <div class="modal-header">
+											<h5 class="modal-title text-center">Thêm lớp học mới</h5>
+											<button  type="button" class="btn-close" data-bs-dismiss="modal"></button>
+											
+										  </div>
+
+										  <!-- Modal body -->
+										  <div class="modal-body text-center">
+										
+										<table style="width:100%">
+										  <tr>
+											<td><label  class="form-label">Mã lớp: </label></td>
+											<td>
+												<input type="text" name="malop" required class="form-control" value="" >
+											</td>
+
+										  </tr>
+										  
+										  
+										  <tr>
+											<td><label  class="form-label">Tên lớp: </label></td>
+											<td>
+												<input type="text" name="tenlop" required class="form-control" value="" >
+											</td>
+
+										  </tr>		
+
+										  <tr>
+											<td><label  class="form-label">Giờ học: </label></td>
+											<td>
+												<input type="text" name="giohoc" required class="form-control" value="" >
+											</td>
+
+										  </tr>											  
+
+										  <tr>
+											<td><label  class="form-label">Giảng viên: </label></td>
+											<td>
+												<select name="giangvien" 
+												 id="giangvien" class="form-control "> 
+												<option selected></option> 
+
+
+												</select>
+											</td>
+
+										  </tr>	
+
+										  <tr>
+											<td><label  class="form-label">Phòng: </label></td>
+											<td>
+												<input type="text" name="phong" required class="form-control" value="" >
+											</td>
+
+										  </tr>	
+
+
+										</table>										
+																				
+										  </div>
+
+										  <!-- Modal footer -->
+										  <div class="modal-footer">
+											
+								<div class="container">
+								<div class="row">
+									<div class="col">   
+									<div class=" text-center "> 
+
+									<button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Đóng</button> 
+									</div> 
+									</div>
+									
+									<div class="col">   
+									<div class=" text-center "> 
+
+									<a onclick="taomoi()" class="btn btn-sm bg-primary text-white" data-bs-dismiss="modal">Tạo mới</a>
+									</div> 
+									</div>
+									
+								</div>
+								<br>
+							</div>
+										  </div>
+
+										</div>
+									  </div>
+									</div>
+	    
+	    <footer class="app-footer">
+		    <div class="container text-center py-3">
+		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="#" target="_blank">Nguyen Le Tai</a> for developers</small>
+		       
+		    </div>
+	    </footer><!--//app-footer-->
+	    
+    </div><!--//app-wrapper-->    	
+
+ 
+    <!-- Javascript -->          
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+	
+    
+    <!-- Page Specific JS -->
+    <script src="assets/js/app.js"></script> 
+	<script>
+function get_all_class(){
+	document.getElementById("user-dropdown-toggle").innerHTML = sessionStorage.getItem("HoTen");
+	if (sessionStorage.getItem("listAllClass")!=null){
+		showClasslist(JSON.parse(sessionStorage.getItem("listAllClass")))
+	}
+
+    var url = `https://amesbe.herokuapp.com/api/manager/search/`
+    console.log(url)
+    fetch(url,{
+        method:"GET",
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vRW5nbGlzaENlbnRlci5jb20vIiwic3ViIjoiUUwxMDAwMDAxIn0.iIN7ejXmrqBxPmuB8TO4YPRjG_8O0WJ2zK6TJyjtLQE'
+        }
+    }).then((reponse)=>{
+		if(reponse.ok){
+			reponse.json().then((json)=>{
+			console.log(json)
+			sessionStorage.setItem("listAllClass",JSON.stringify(json))
+			let classData=json
+			showClasslist(classData)
+			})
+		}
+
+    }).catch((error)=>{
+    console.log(object)
+	})
+	
+}
+	function showClasslist(classData){
+		if(classData.length>0){
+				var cry = ""
+				}
+				
+				classData.forEach((class1) => {
+					cry += "<tr>"
+					cry += `<td class="cell text-center"> ${class1.MaLop} </td>`;
+					cry += `<td class="cell text-center"> ${class1.TenLop} </td>`;
+					cry += `<td class="cell text-center"> ${class1.TenGiangVien}</td>`;
+					cry += `<td class="cell text-center"> ${class1.GioHoc} </td>`;
+					cry += `<td class="cell text-center"> ${class1.PhongHoc} </td>`;
+					
+					if(class1.HocVien==null){
+					cry += `<td class="cell text-center"> 0 </td>`;
+					}else{
+					cry += `<td class="cell text-center"> ${Object.keys(class1.HocVien).length} </td>`;					
+					}
+
+					
+					cry += `<td class="cell text-center"><a href="viewlophoc_quanly.html?${class1.MaLop}" class="btn-sm app-btn-primary" href="#">View</a></td>`; "<tr>";
+				
+				})
+					document.getElementById("data1").innerHTML=cry
+	}
+	
+	function get_all_gv(){
+	var url = `https://amesbe.herokuapp.com/api/manager/getAllTeacher`
+	console.log(url)
+	fetch(url,{
+		method:"GET",
+		headers:{
+			'Content-Type': 'application/json',
+			'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vRW5nbGlzaENlbnRlci5jb20vIiwic3ViIjoiUUwxMDAwMDAxIn0.iIN7ejXmrqBxPmuB8TO4YPRjG_8O0WJ2zK6TJyjtLQE'
+		}
+	}).then((reponse)=>{
+			if(reponse.ok){
+				reponse.json().then((json)=>{
+				console.log(json)
+
+
+					let classData1=json
+					
+				if(classData1.length>0){
+				var cry1 = ""
+				}
+				
+				classData1.forEach((gv) => {
+
+					cry1 += `<option value="${gv.TK}-${gv.UserName}">${gv.TK}-${gv.UserName}</option>`;
+
+				
+				})
+					document.getElementById("giangvien").innerHTML=cry1				 
+
+				})
+			}
+			
+			
+	}).catch((error)=>{
+		console.log(object)
+	})
+	}		
+
+	function taomoi(){
+
+	var giangvien = document.querySelector('#giangvien option:checked').value
+	var malop = document.querySelector('input[name="malop"]').value
+	var tenlop = document.querySelector('input[name="tenlop"]').value
+	var giohoc = document.querySelector('input[name="giohoc"]').value
+	var phong = document.querySelector('input[name="phong"]').value	
+
+	var magv=giangvien.substr(0, 9);
+	var tengv=giangvien.substr(10, );
+
+	console.log(typeof malop);
+	console.log(typeof tenlop);
+	console.log(typeof giohoc);
+	console.log(typeof magv);
+	console.log(typeof tengv);
+	console.log(typeof phong);
+		
+	var formData ={
+    "GioHoc":giohoc,
+    "MaGiangVien":magv,
+    "MaLop":malop,
+    "PhongHoc":phong,
+    "TenGiangVien":tengv,
+    "TenLop":tenlop
+	};
+	taomoilop(formData);	
+	}
+	
+	function taomoilop(data){
+
+	var url = `https://amesbe.herokuapp.com/api/manager/add`
+    console.log(url)
+	console.log(data)
+    fetch(url,{
+        method:"POST",
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vRW5nbGlzaENlbnRlci5jb20vIiwic3ViIjoiUUwxMDAwMDAxIn0.iIN7ejXmrqBxPmuB8TO4YPRjG_8O0WJ2zK6TJyjtLQE'
+        },
+		body: JSON.stringify(data)
+    }).then((reponse)=>{
+		if(reponse.ok){
+			window.location.replace("./listlophoc_quanly.html")
+			location.reload()
+			alert("thêm lớp thành công") 
+		}
+		else {
+			alert("thêm lớp thất bại do trùng mã lớp hoặc xung đột lịch hoặc nhập giờ học sai định dạng")   
+		}
+    }).catch((error)=>{
+		alert("thêm lớp thất bại do trùng mã lớp hoặc xung đột lịch hoặc nhập giờ học sai định dạng")
+    	console.log(object)
+	})
+}	
+
+
+					//cry += `<td class="cell text-center"> ${Object.keys(class1.HocVien).length} </td>`;
+	</script>
+
+</body>
+</html> 
+
